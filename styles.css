@@ -33,10 +33,46 @@
   align-items: center;
 }
 
+.title-word-1 {
+  --color-1: rgb(190, 202, 15);
+  --color-2: #ce9a7e;
+  --color-3: #38318d;
+}
+
+.title-word-2 {
+  --color-1: #38318d;
+  --color-2: rgb(190, 202, 15);
+  --color-3: #ce9a7e;
+}
+
+.title-word-3 {
+  --color-1: #ce9a7e; 
+  --color-2: #38318d;
+  --color-3: rgb(190, 202, 15);
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
+
+.title-box {
+  display: flex;
+}
+
 .title {
   font-weight: 700;
   font-size: 37px;
-  margin: 60px 0 22px;
+  margin: 60px 3px 22px;
+
+  cursor: pointer;
+
+  animation: color-animation 4s linear infinite;
 }
 
 .box {
@@ -138,6 +174,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #3ac2e4;
 }
 
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0px)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+}
+
 .button {
   background-color: #3f3d56;
   color: #ffffff;
@@ -149,11 +194,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-bottom: 28px;
   font-size: 16px;
 
-  transition-duration: 300ms;
+  
 }
 
 .button:hover {
   background-color: #3f3d56e8;
+  transition-duration: 300ms;
+
+  animation: waviy 1s infinite alternate;
 }
 
 .paragraph-field {
